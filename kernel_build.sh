@@ -13,8 +13,8 @@ wget "$(curl -s https://raw.githubusercontent.com/XSans0/WeebX-Clang/main/main/l
 mkdir clang-llvm && tar -xf weebx-clang.tar.gz -C clang-llvm && rm -rf weebx-clang.tar.gz
 
 # Set variable
-export KBUILD_BUILD_USER=alternoegraha
-export KBUILD_BUILD_HOST=Nurture
+export KBUILD_BUILD_USER=Kiddie
+export KBUILD_BUILD_HOST=Shan
 
 # Build
 # Prepare
@@ -27,8 +27,8 @@ git clone --depth=1 https://github.com/alternoegraha/AnyKernel3-680 -b master An
 cp -R out/arch/arm64/boot/Image.gz AnyKernel3/Image.gz
 # Zip it and upload it
 cd AnyKernel3
-zip -r9 Mi680-WeatheringWithYou-R3-refresh-"$BUILDDATE" . -x ".git*" -x "README.md" -x "*.zip"
-curl -T Mi680-WeatheringWithYou-R3-refresh-"$BUILDDATE".zip https://pixeldrain.com/api/file/
+zip -r9 Kimihime-Kernul-"$BUILDDATE" . -x ".git*" -x "README.md" -x "*.zip"
+curl -T Kimihime-Kernul-"$BUILDDATE".zip -u :e3e81e86-d14d-4354-b989-db2c8f7e237f https://pixeldrain.com/api/file/
 # finish
 cd ..
 rm -rf clang-llvm/ out/ AnyKernel3/
