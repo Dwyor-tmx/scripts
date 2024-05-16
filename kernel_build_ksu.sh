@@ -33,7 +33,7 @@ cp -R out/arch/arm64/boot/Image.gz AnyKernel3/Image.gz
 # Zip it and upload it
 cd AnyKernel3
 zip -r9 sdm660/kimihime-kernel+KSU-"$BUILDDATE" . -x ".git*" -x "README.md" -x "*.zip"
-curl -T sdm660/kimihime-kernel+KSU-"$BUILDDATE".zip https://pixeldrain.com/api/file/
+curl -T sdm660/kimihime-kernel+KSU-"$BUILDDATE".zip -u :e3e81e86-d14d-4354-b989-db2c8f7e237f https://pixeldrain.com/api/file/
 # finish
 cd ..
 rm -rf clang-llvm/ AnyKernel3/
