@@ -13,13 +13,13 @@ git clone --depth=1 https://gitlab.com/anandhan07/aosp-clang.git clang-llvm
 #mkdir clang-llvm && tar -xf weebx-clang.tar.gz -C clang-llvm && rm -rf weebx-clang.tar.gz
 
 # Set variable
-export KBUILD_BUILD_USER=alternoegraha
-export KBUILD_BUILD_HOST=Nurture
+export KBUILD_BUILD_USER=kiddie
+export KBUILD_BUILD_HOST=ubuntu
 
-# init KSU
-# git submodule update --remote
-# git submodule update --init --recursive
-# git cherry-pick --no-commit b96654d3063f62eab5d47d63c8b18d15b8037f1a^..443ba3a3803a968eae80a2131fc14ceb3b7a8785
+ init KSU
+ git submodule update --remote
+ git submodule update --init --recursive
+ git cherry-pick --no-commit b96654d3063f62eab5d47d63c8b18d15b8037f1a^..443ba3a3803a968eae80a2131fc14ceb3b7a8785
 
 # Build
 # Prepare
@@ -28,12 +28,12 @@ make -j$(nproc --all) O=out ARCH=arm64 CC=$(pwd)/clang-llvm/bin/clang CROSS_COMP
 make -j$(nproc --all) O=out ARCH=arm64 CC=$(pwd)/clang-llvm/bin/clang CROSS_COMPILE=aarch64-linux-gnu- CLANG_TRIPLE=aarch64-linux-gnu- LLVM_IAS=1
 
 # Package
-git clone --depth=1 https://github.com/alternoegraha/AnyKernel3-680 -b ksu AnyKernel3
+git clone --depth=1 https://github.com/ardia-kun/AnyKernel3-680 -b ksu AnyKernel3
 cp -R out/arch/arm64/boot/Image.gz AnyKernel3/Image.gz
 # Zip it and upload it
 cd AnyKernel3
-zip -r9 Mi680-WeatheringWithYou-R3-refresh-KSU-"$BUILDDATE" . -x ".git*" -x "README.md" -x "*.zip"
-curl -T Mi680-WeatheringWithYou-R3-refresh-KSU-"$BUILDDATE".zip https://pixeldrain.com/api/file/
+zip -r9 sdm660/kimihime-kernel+KSU-"$BUILDDATE" . -x ".git*" -x "README.md" -x "*.zip"
+curl -T sdm660/kimihime-kernel+KSU-"$BUILDDATE".zip https://pixeldrain.com/api/file/
 # finish
 cd ..
 rm -rf clang-llvm/ out/ AnyKernel3/
