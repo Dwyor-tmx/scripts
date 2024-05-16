@@ -36,5 +36,5 @@ zip -r9 sdm660/kimihime-kernel+KSU-"$BUILDDATE" . -x ".git*" -x "README.md" -x "
 curl -T sdm660/kimihime-kernel+KSU-"$BUILDDATE".zip https://pixeldrain.com/api/file/
 # finish
 cd ..
-rm -rf clang-llvm/ out/ AnyKernel3/
+rm -rf clang-llvm/ AnyKernel3/
 echo "Build finished"
